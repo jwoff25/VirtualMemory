@@ -6,8 +6,8 @@ class ProcessTable {
 	private:
 		PageTable *procPageTable[32];
 	public:
-		inline ProcessTable();
+		ProcessTable();
 		void setProcPT(int pid, PageTable *pt);
-		PageTable *getProcPT(int pid);
+		PageTable* getProcPT(int pid);
 };
 #endif

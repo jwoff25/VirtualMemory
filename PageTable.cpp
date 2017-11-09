@@ -1,7 +1,7 @@
 #include "PageTable.h"
 #include "PageTableEntry.h"
 
-inline PageTable::PageTable(){
+PageTable::PageTable(){
 
 }
 
@@ -9,6 +9,6 @@ void PageTable::setPTE(int pt, PageTableEntry *ptr){
 
 }
 
-PageTableEntry PageTableEntry::*getPTE(int page){
+PageTableEntry* PageTable::getPTE(int page){
 	return 0;
 }

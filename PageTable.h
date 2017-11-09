@@ -6,8 +6,8 @@ class PageTable {
 	private:
 		PageTableEntry *entries[64];
 	public:
-		inline PageTable(); 
+		PageTable(); 
 		void setPTE(int pt, PageTableEntry *ptr);
-		PageTableEntry *getPTE(int page);
+		PageTableEntry* getPTE(int page);
 };
 #endif
