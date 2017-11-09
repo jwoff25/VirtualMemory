@@ -6,9 +6,9 @@ using namespace std;
 
 class Parser {
     public:
-        void access_memory(string);
-        void new_process(string);
-        void switch_process(string);
+        void access_memory(int);
+        void new_process(int);
+        void switch_process(int);
 };
 
 #endif

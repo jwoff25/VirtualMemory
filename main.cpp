@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <stdlib.h>
 #include "parser.h"
 
 using namespace std;
@@ -22,9 +23,10 @@ int main(){
             //value = PID or memory location
             istringstream stream(line);
             string command;
-            string value;
+            string val;
             getline(stream,command,' ');
-            getline(stream,value,' ');
+            getline(stream,val,' ');
+            int value = atoi(val.c_str());
             //if command is new
             if (command == "new"){
                 p.new_process(value);

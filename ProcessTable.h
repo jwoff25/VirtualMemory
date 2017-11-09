@@ -4,7 +4,7 @@
 
 class ProcessTable {
 	private:
-		PageTable *procPageTable[10];
+		PageTable *procPageTable[32];
 	public:
 		inline ProcessTable();
 		void setProcPT(int pid, PageTable *pt);
