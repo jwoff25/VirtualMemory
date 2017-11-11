@@ -4,7 +4,7 @@
 
 class PageTable {
 	private:
-		PageTableEntry *entries[64];
+		PageTableEntry* entries[64];
 	public:
 		PageTable(); 
 		void setPTE(int pt, PageTableEntry *ptr);

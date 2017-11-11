@@ -4,7 +4,8 @@
 
 class ProcessTable {
 	private:
-		PageTable *procPageTable[32];
+		PageTable* procPageTable[32];
+		int pointer;
 	public:
 		ProcessTable();
 		void setProcPT(int pid, PageTable *pt);

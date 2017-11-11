@@ -6,9 +6,9 @@ PageTable::PageTable(){
 }
 
 void PageTable::setPTE(int pt, PageTableEntry *ptr){
-
+	entries[pt] = ptr;
 }
 
 PageTableEntry* PageTable::getPTE(int page){
-	return 0;
+	return entries[page];
 }
