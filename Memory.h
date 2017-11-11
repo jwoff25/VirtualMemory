@@ -6,7 +6,7 @@ class Memory {
 	private:
 		PageTableEntry *frames[30];
 	public:
-		inline Memory();
+		Memory();
 		void setFrame(int frame, PageTableEntry *pte);
 		PageTableEntry *getFrame(int frame);
 		int getFreePage();

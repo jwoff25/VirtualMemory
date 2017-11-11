@@ -2,7 +2,7 @@
 #include <vector>
 #include "PageTableEntry.h"
 
-inline Disk::Disk(){
+Disk::Disk(){
 
 }
 

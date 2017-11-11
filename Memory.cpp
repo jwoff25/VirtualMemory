@@ -1,7 +1,7 @@
 #include "Memory.h"
 #include "PageTableEntry.h"
 
-inline Memory::Memory(){
+Memory::Memory(){
 
 }
 

@@ -7,7 +7,7 @@ class Disk {
 	private:
 		std::vector<PageTableEntry*> frames;
 	public: 
-		inline Disk();
+		Disk();
 		void addFrame(PageTableEntry* pte);
 		void removeFrame(int pteLocation);
 };

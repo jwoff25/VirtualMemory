@@ -6,7 +6,7 @@ class PageTableEntry{
 		bool inMemory;
 		int frame;
 	public:
-		inline PageTableEntry();
+		PageTableEntry();
 		int getFrame();
 		bool isInMemory();
 		void swapToDisk(int diskFrame);

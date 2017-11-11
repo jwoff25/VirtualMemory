@@ -20,6 +20,11 @@ PageTable* current_page_table;
 //PageTable page_table;
 ProcessTable process_table;
 
+int access_count = 0;
+int hits = 0;
+int misses = 0;
+int compulsory_misses = 0;
+
 int main(){
     //string to store lines
     string line;
@@ -49,6 +54,7 @@ int main(){
             }
         }
     }
+    cout << "Access: " << access_count << endl;
 }
 
 void new_process(int n){
@@ -63,7 +69,8 @@ void switch_process(int n){
 }
 
 void access_memory(int memory_address){
-    //cout << "Accessing memory location: " << s  << endl;   
+    //cout << "Accessing memory location: " << s  << endl;  
+    access_count++; 
     int page = memory_address >> 10;
     PageTableEntry* frame = current_page_table->getPTE(page);
     frame->isInMemory();

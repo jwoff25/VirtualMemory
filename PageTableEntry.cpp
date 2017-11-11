@@ -1,6 +1,6 @@
 #include "PageTableEntry.h"
 
-inline PageTableEntry::PageTableEntry(){
+PageTableEntry::PageTableEntry(){
 
 }
 
