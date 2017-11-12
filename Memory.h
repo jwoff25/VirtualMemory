@@ -4,7 +4,7 @@
 
 class Memory {
 	private:
-		PageTableEntry *frames[30];
+		PageTableEntry* frames[30];
 	public:
 		Memory();
 		void setFrame(int frame, PageTableEntry *pte);

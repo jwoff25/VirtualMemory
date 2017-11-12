@@ -19,6 +19,7 @@ void access_memory(int memory_address);
 PageTable* current_page_table;
 //PageTable page_table;
 ProcessTable process_table;
+Memory mem;
 
 int access_count = 0;
 int hits = 0;
@@ -28,6 +29,8 @@ int compulsory_misses = 0;
 int main(){
     //string to store lines
     string line;
+    int test = 54717 >> 10;
+    cout << test << endl;
     //open file
     ifstream file ("VMInput.txt");
     //loop thru
@@ -72,6 +75,7 @@ void access_memory(int memory_address){
     //cout << "Accessing memory location: " << s  << endl;  
     access_count++; 
     int page = memory_address >> 10;
-    PageTableEntry* frame = current_page_table->getPTE(page);
-    frame->isInMemory();
+    PageTableEntry* frame;
+    //if (current_page_table->getPTE(page))
+    //frame->isInMemory();
 }

@@ -5,11 +5,19 @@ PageTableEntry::PageTableEntry(){
 }
 
 int PageTableEntry::getFrame(){
-	return 0;
+	return frame;
 }
 
 bool PageTableEntry::isInMemory(){
-	return false;
+	return inMemory;
+}
+
+void PageTableEntry::memFalse(){
+	inMemory = false;
+}
+
+void PageTableEntry::memTrue(){
+	inMemory = true;
 }
 
 void PageTableEntry::swapToDisk(int diskFrame){

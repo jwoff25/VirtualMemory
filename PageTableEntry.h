@@ -11,5 +11,7 @@ class PageTableEntry{
 		bool isInMemory();
 		void swapToDisk(int diskFrame);
 		void swapToMemory(int memFrame);
+		void memFalse();
+		void memTrue();
 };
 #endif
