@@ -1,5 +1,9 @@
 #include "PageTable.h"
 #include "PageTableEntry.h"
+#include <cstddef>
+#include <iostream>
+
+using namespace std;
 
 PageTable::PageTable(){
 

@@ -8,6 +8,7 @@ class PageTableEntry{
 	public:
 		PageTableEntry();
 		int getFrame();
+		void setFrame(int f);
 		bool isInMemory();
 		void swapToDisk(int diskFrame);
 		void swapToMemory(int memFrame);

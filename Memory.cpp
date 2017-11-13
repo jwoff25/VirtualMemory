@@ -9,6 +9,8 @@ Memory::Memory(){
 }
 
 void Memory::setFrame(int frame, PageTableEntry *pte){
+	pte->setFrame(frame);
+	pte->memTrue();
 	frames[frame] = pte;
 }
 
@@ -18,9 +20,8 @@ PageTableEntry* Memory::getFrame(int frame){
 
 int Memory::getFreePage(){
 	nextFrame = nextFrame % 30;
-	PageTableEntry* pt = getFrame(nextFrame);
 	if (frames[nextFrame] != (PageTableEntry*)NULL){
-		pt->memFalse();
+		frames[nextFrame]->memFalse();
 		frames[nextFrame] = (PageTableEntry*)NULL;
 	}
 	return nextFrame++;

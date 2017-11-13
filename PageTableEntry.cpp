@@ -1,11 +1,19 @@
 #include "PageTableEntry.h"
+#include <iostream>
+#include <cstddef>
+
+using namespace std;
 
 PageTableEntry::PageTableEntry(){
-
+	frame = 0;
 }
 
 int PageTableEntry::getFrame(){
 	return frame;
+}
+
+void PageTableEntry::setFrame(int f){
+	frame = f;
 }
 
 bool PageTableEntry::isInMemory(){

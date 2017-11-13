@@ -29,8 +29,6 @@ int compulsory_misses = 0;
 int main(){
     //string to store lines
     string line;
-    int test = 54717 >> 10;
-    cout << test << endl;
     //open file
     ifstream file ("VMInput.txt");
     //loop thru
@@ -58,6 +56,9 @@ int main(){
         }
     }
     cout << "Access: " << access_count << endl;
+    cout << "Hits: " << hits << endl;
+    cout << "Misses: " << misses << endl;
+    cout << "Compulsory Misses: " << compulsory_misses << endl;
 }
 
 void new_process(int n){
@@ -73,9 +74,23 @@ void switch_process(int n){
 
 void access_memory(int memory_address){
     //cout << "Accessing memory location: " << s  << endl;  
-    access_count++; 
+    access_count++;
     int page = memory_address >> 10;
-    PageTableEntry* frame;
-    //if (current_page_table->getPTE(page))
-    //frame->isInMemory();
+    PageTableEntry* pte;
+    if (current_page_table->getPTE(page) == NULL){
+        pte = new PageTableEntry();
+        compulsory_misses++;
+    }
+    else {
+        pte = current_page_table->getPTE(page);
+    }
+    if (pte->isInMemory()){
+        hits++;
+    }
+    else {
+        misses++;
+        int free_frame = mem.getFreePage();
+        mem.setFrame(free_frame,pte);
+    }
+    current_page_table->setPTE(page,pte);
 }
